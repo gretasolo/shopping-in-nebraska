@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 }
 
 .product {
@@ -15,6 +16,16 @@
   width: 100px;
   height: 100px;
   margin: 25px;
+  
 }
 
+.shoppingCartItems {
+  color: black;
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  justify-content: center;
 
+}

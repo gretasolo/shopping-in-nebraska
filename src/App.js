@@ -1,51 +1,88 @@
 import React from 'react';
 import './App.css';
 
-let shoppingCartItems = [
+
+
+
+let listShoppingCartItems = [
   {
-    item: 'War and Peace',
-    image: 'https://images4.penguinrandomhouse.com/cover/9781400079988',
-    description: 'War and Peace broadly focuses on Napoleon’s invasion of Russia in 1812 and follows three of the most well-known characters in literature',
-    price: 100
+    item: 'Corn',
+    image: 'http://bit.ly/2NihbNh',
+    description: 'This is your fuel. Your new work, food, life, and passion.',
+    price: 1000,
   },
+  {
+    item: 'Corn-head',
+    image: 'http://bit.ly/36IUqtA',
+    description: 'Necessary to wear to all Husker football games and to fit in anywhere in Nebraska.',
+    price: 2000,
+  },
+  {
+    item: 'Cornhusker Jersey',
+    image: 'http://bit.ly/2CfMwJX',
+    description: 'Your new uniform.',
+    price: 3000,
+  },
+  {
+    item: 'Soybeans',
+    image: 'http://bit.ly/36vdE5D',
+    description: 'Sister to corn. Your fuel, your side passion.',
+    price: 4000,
+  },
+  {
+    item: 'Name-A-Cow',
+    image: 'http://bit.ly/34tWeo9',
+    description: 'This is your property. Mark your land with some Angus beef.',
+    price: 5000,
+  }
+
 ]
+
+
 
 function App() {
   return (
     <div className="App">
       <h1>Your Shopping Cart</h1>
-     <SearchForm />
-     <ShoppingCart />
-    </div>
-  );
-}
+    
+      <ShoppingCart />
+     
+     </div>
+    
 
-function ShoppingCart() {
+  );
+  function Images(){
   return(
-    <div className="cart">
-      <Product />
-    </div>
+    <div className="photo">
+    {/* {postsImage} */}
+  </div>
   );
 }
 
-function Product() {
+ function ShoppingCart() {
+
+  const postsSequence = listShoppingCartItems.map((product) =>
+    <Product item={product.item} image={product.image} />
+  );
+
+   return(
+     <div className="cart">
+      {postsSequence}
+     </div>
+   );
+ }
+
+function Product(props) {
   return(
     <div className="product">
-      <img src={shoppingCartItems[0].image} width="100"/>
-    </div>
-  )
+    < img className="image" src={props.image}/>
+    <p></p>
+  </div>
+)
+  
 }
 
-function SearchForm() {
-  return(
-    <form>
-      <label>
-        Search:
-        <input type="text" name="name" />
-      </label>
-      <input type="submit" value="Submit" />
-    </form>
-  );
-}
 
+  
+}
 export default App;
