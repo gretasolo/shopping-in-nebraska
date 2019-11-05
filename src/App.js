@@ -1,9 +1,6 @@
 import React from 'react';
 import './App.css';
 
-
-
-
 let listShoppingCartItems = [
   {
     item: 'Corn',
@@ -43,7 +40,7 @@ let listShoppingCartItems = [
 function App() {
   return (
     <div className="App">
-      <h1>Your Shopping Cart</h1>
+      <h1>My Local Shopping Cart</h1>
     
       <ShoppingCart />
      
@@ -51,32 +48,48 @@ function App() {
     
 
   );
-  function Images(){
-  return(
-    <div className="photo">
-    {/* {postsImage} */}
-  </div>
-  );
-}
+
+//   function Images(){
+//   return(
+//     <div className="photo">
+//     {/* {postsImage} */}
+//   </div>
+//   );
+// }
 
  function ShoppingCart() {
-
-  const postsSequence = listShoppingCartItems.map((product) =>
-    <Product item={product.item} image={product.image} />
-  );
+  
+  // const postsSequence = listShoppingCartItems.map((product) =>
+  //   <Product item={product.item} image={product.image} />
+  // );
 
    return(
      <div className="cart">
-      {postsSequence}
+       {listShoppingCartItems.map(Product)}
+      {/* {postsSequence} */}
      </div>
    );
  }
 
 function Product(props) {
   return(
+    <div className="theImage">
     <div className="product">
-    < img className="image" src={props.image}/>
-    <p></p>
+    <img src={props.image} width="200" alt="sorry"/>
+    </div>
+
+    <div className="itemname">
+    <h1>{props.item}</h1>
+    </div>
+    
+  <div className="descripter">
+    <p>{props.description}</p>
+  </div>
+
+<div className="pricey">
+  <p>{"$"+props.price}</p>
+</div>
+ 
   </div>
 )
   
