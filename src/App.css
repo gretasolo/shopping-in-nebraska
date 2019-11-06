@@ -4,11 +4,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color:#FF2F21;
   
 }
 
-.product {
-  background: white;
+.Product {
   display: flex;
   flex-direction: row;
   width: 100px;
@@ -17,13 +17,3 @@
   
 }
 
-.shoppingCartItems {
-  color: black;
-  display: flex;
-  flex-direction: row;
-  height: 100px;
-  width: 100px;
-  text-align: center;
-  justify-content: center;
-
-}
